@@ -42,21 +42,24 @@ public class Main {
             JFrame frame2 = new JFrame("Are you sure?");
             JLabel label3 = new JLabel("Are you sure you want to exit?");
             JPanel panel3 = new JPanel();
+            JPanel panel4 = new JPanel();
 
             JButton yesButton = new JButton("Yes");
             JButton noButton = new JButton("No");
 
             frame2.setLayout(new GridLayout(2, 1));
-            frame2.add(label3);
+            panel3.setLayout(new FlowLayout(FlowLayout.CENTER));
+            panel3.add(label3);
+            frame2.add(panel3);
 
-            panel3.setLayout(new GridLayout(1, 2));
-            panel3.add(yesButton);
+            panel4.setLayout(new GridLayout(1, 2));
+            panel4.add(yesButton);
             yesButton.addActionListener(event -> System.exit(0));
 
-            panel3.add(noButton);
+            panel4.add(noButton);
             noButton.addActionListener(event -> frame2.dispose());
             
-            frame2.add(panel3);
+            frame2.add(panel4);
 
             frame2.setSize(300, 200);
             frame2.setVisible(true);
